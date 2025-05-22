@@ -23,7 +23,7 @@ workflows:
           ls ./
           echo '---- 2 ----'
           echo '----- e2 ----'
-          ./gradlew assembleDebug -Dorg.gradle.jvmargs="--add-opens java.base/java.io=ALL-UNNAMED"
+          ./gradlew assembleRelease -Dorg.gradle.jvmargs="--add-opens java.base/java.io=ALL-UNNAMED"
           find ../build_outputs/ -type f
 
       - name: List output files (debugging)
