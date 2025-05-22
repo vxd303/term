@@ -10,17 +10,23 @@ workflows:
       - name: Setup local.properties
         script: |
           echo "ndk.dir=/usr/local/share/android-sdk/ndk/25.2.9519653" >> local.properties
+
       - name: Install NDK
         script: |
           yes | ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager "ndk;$NDK_VERSION"
+
       - name: Make gradlew executable
         script: chmod +x ./gradlew
 
       - name: Build APK
         script: ./gradlew assembleDebug -Dorg.gradle.jvmargs="--add-opens java.base/java.io=ALL-UNNAMED"
+
+      - name: List output files (debugging)
+        script: find build/ -type f
+
     artifacts:
-      - build/**/outputs/apk/**/*.apk                   # relative path for a project in root directory
-      - subfolder_name/build/**/outputs/apk/**/*.apk    # relative path for a project in subfolder
+      - build/**/outputs/apk/**/*.apk
+      - subfolder_name/build/**/outputs/apk/**/*.apk
       - build/**/outputs/**/*.aab
       - build/**/outputs/**/mapping.txt
       - build/ios/ipa/*.ipa
