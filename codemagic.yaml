@@ -22,7 +22,7 @@ workflows:
         script: |
           ls ./
           echo '---- 2 ----'
-          ls ../
+          find ../ -type f -name '*.apk'
           echo '----- e2 ----'
           ./gradlew assembleDebug -Dorg.gradle.jvmargs="--add-opens java.base/java.io=ALL-UNNAMED"
           find ../build_outputs/ -type f
