@@ -14,6 +14,6 @@ workflows:
         script: chmod +x ./gradlew
 
       - name: Build APK
-        script: ./gradlew assembleDebug
+        script: ./gradlew assembleDebug -Dorg.gradle.jvmargs="--add-opens java.base/java.io=ALL-UNNAMED"
     artifacts:
       - app/build/outputs/apk/debug/app-debug.apk
