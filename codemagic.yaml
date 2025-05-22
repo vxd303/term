@@ -20,9 +20,9 @@ workflows:
 
       - name: Build APK
         script:|
-        cd termux-app
-        ./gradlew assembleDebug -Dorg.gradle.jvmargs="--add-opens java.base/java.io=ALL-UNNAMED"
-        find build/ -type f
+          cd termux-app
+          ./gradlew assembleDebug -Dorg.gradle.jvmargs="--add-opens java.base/java.io=ALL-UNNAMED"
+          find build/ -type f
 
       - name: List output files (debugging)
         script: find build/ -type f
