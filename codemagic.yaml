@@ -27,7 +27,15 @@ workflows:
           find ../build_outputs/ -type f
 
       - name: List output files (debugging)
-        script: find .
+        script: find ../
+
+    publishing: 
+      email:
+        recipients:
+          - avalubau@gmail.com
+        notify:
+          success: true
+          failure: false
 
     artifacts:
       - app/build/outputs/**/*.aab
