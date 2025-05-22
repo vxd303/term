@@ -7,6 +7,9 @@ workflows:
         NDK_VERSION: 25.2.9519653
       java: 17
     scripts:
+      - name: Setup local.properties
+        script: |
+          echo "ndk.dir=/usr/local/share/android-sdk/ndk/25.2.9519653" >> local.properties
       - name: Install NDK
         script: |
           yes | ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager "ndk;$NDK_VERSION"
@@ -16,4 +19,11 @@ workflows:
       - name: Build APK
         script: ./gradlew assembleDebug -Dorg.gradle.jvmargs="--add-opens java.base/java.io=ALL-UNNAMED"
     artifacts:
-      - app/build/outputs/apk/debug/app-debug.apk
+      - build/**/outputs/apk/**/*.apk                   # relative path for a project in root directory
+      - subfolder_name/build/**/outputs/apk/**/*.apk    # relative path for a project in subfolder
+      - build/**/outputs/**/*.aab
+      - build/**/outputs/**/mapping.txt
+      - build/ios/ipa/*.ipa
+      - build/macos/**/*.pkg
+      - /tmp/xcodebuild_logs/*.log
+      - flutter_drive.log
