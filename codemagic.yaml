@@ -3,9 +3,13 @@ workflows:
     name: Build Termux APK
     max_build_duration: 30
     environment:
-      android_ndk: 21.4.7075529
+      vars:
+        NDK_VERSION: 21.4.7075529
       java: 11
     scripts:
+      - name: Install NDK
+        script: |
+          yes | sdkmanager "ndk;$NDK_VERSION"
       - name: Make gradlew executable
         script: chmod +x ./gradlew
 
