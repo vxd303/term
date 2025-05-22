@@ -19,12 +19,16 @@ workflows:
         script: chmod +x ./gradlew
 
       - name: Build APK
-        script: ./gradlew assembleDebug -Dorg.gradle.jvmargs="--add-opens java.base/java.io=ALL-UNNAMED"
+        script:|
+        cd termux-app
+        ./gradlew assembleDebug -Dorg.gradle.jvmargs="--add-opens java.base/java.io=ALL-UNNAMED"
+        find build/ -type f
 
       - name: List output files (debugging)
         script: find build/ -type f
 
     artifacts:
+      - termux-app/build/**/outputs/apk/**/*.apk
       - build/**/outputs/apk/**/*.apk
       - subfolder_name/build/**/outputs/apk/**/*.apk
       - build/**/outputs/**/*.aab
