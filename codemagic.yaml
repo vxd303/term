@@ -22,15 +22,15 @@ workflows:
         script: |
           ls ./
           echo '---- 2 ----'
-          find ../ -type f -name '*.apk'
           echo '----- e2 ----'
           ./gradlew assembleDebug -Dorg.gradle.jvmargs="--add-opens java.base/java.io=ALL-UNNAMED"
           find ../build_outputs/ -type f
 
       - name: List output files (debugging)
-        script: find build/ -type f
+        script: find .
 
     artifacts:
+      - app/build/outputs/**/*.aab
       - termux-app/build/**/outputs/apk/**/*.apk
       - build/**/outputs/apk/**/*.apk
       - subfolder_name/build/**/outputs/apk/**/*.apk
