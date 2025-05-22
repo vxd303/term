@@ -3,7 +3,7 @@ apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion project.properties.compileSdkVersion.toInteger()
-    ndkVersion = "25.2.9519653"
+    ndkVersion "25.2.9519653"
 
     defaultConfig {
         minSdkVersion project.properties.minSdkVersion.toInteger()
