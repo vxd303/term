@@ -1,2 +1,1 @@
-include ':app', ':termux-shared', ':terminal-emulator', ':terminal-view',include ':termux-am-library'
-project(':termux-am-library').projectDir = new File(rootDir, './termux-am-library')
+include ':app', ':termux-shared', ':terminal-emulator', ':terminal-view',':termux-am-library'
