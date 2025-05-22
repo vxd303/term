@@ -4,7 +4,7 @@ workflows:
     max_build_duration: 30
     environment:
       vars:
-        NDK_VERSION: 21.4.7075529
+        NDK_VERSION: 25.2.9519653
       java: 17
     scripts:
       - name: Install NDK
