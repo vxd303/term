@@ -20,7 +20,7 @@ workflows:
 
       - name: Build APK
         script: |
-          cd termux-app
+          cd term
           ./gradlew assembleDebug -Dorg.gradle.jvmargs="--add-opens java.base/java.io=ALL-UNNAMED"
           find build/ -type f
 
