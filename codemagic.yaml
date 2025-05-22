@@ -8,16 +8,7 @@ workflows:
       - name: Make gradlew executable
         script: chmod +x ./gradlew
 
-      - name: Install NDK
-        script: |
-          yes | sdkmanager --install "ndk;21.4.7075529"
-
-      - name: Set NDK path
-        script: |
-          echo "export ANDROID_NDK_HOME=$ANDROID_SDK_ROOT/ndk/21.4.7075529" >> $CM_ENV_FILE
-          echo "export PATH=\$ANDROID_NDK_HOME:\$PATH" >> $CM_ENV_FILE
-
-      - name: Build APK
+      - name: Build APK (with automatic NDK download)
         script: ./gradlew assembleDebug
     artifacts:
       - app/build/outputs/apk/debug/app-debug.apk
