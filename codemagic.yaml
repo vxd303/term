@@ -2,9 +2,7 @@ workflows:
   build-termux:
     name: Build Termux APK
     max_build_duration: 30
-    environment:
-      vars:
-        JAVA_HOME: /opt/android/sdk/java/openjdk
+    environment: {}
     scripts:
       - name: Make gradlew executable
         script: chmod +x ./gradlew
