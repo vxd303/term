@@ -23,7 +23,7 @@ workflows:
           ls ./
           echo '---- 2 ----'
           echo '----- e2 ----'
-          ./gradlew bundleRelease -Dorg.gradle.jvmargs="--add-opens java.base/java.io=ALL-UNNAMED"
+          ./gradlew assembleRelease -Dorg.gradle.jvmargs="--add-opens java.base/java.io=ALL-UNNAMED"
           find ../build_outputs/ -type f
 
 
@@ -37,6 +37,7 @@ workflows:
 
     artifacts:
       - app/build/outputs/**/*.aab
+      - app/build/outputs/**/*.apk
       - termux-app/build/**/outputs/apk/**/*.apk
       - build/**/outputs/apk/**/*.apk
       - subfolder_name/build/**/outputs/apk/**/*.apk
