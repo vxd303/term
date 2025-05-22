@@ -1,4 +1,4 @@
-package com.termux.am;
+package com.term.am;
 
 import android.content.ComponentName;
 import android.content.Intent;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.termux.am;
+package com.term.am;
 
 /**
  * Copied from android-7.0.0_r1 frameworks/base/core/java/android/os
