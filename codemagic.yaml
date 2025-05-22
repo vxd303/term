@@ -27,7 +27,7 @@ workflows:
           find ../build_outputs/ -type f
 
       - name: List output files (debugging)
-        script: find ../
+        script: find ../ -name '*.apk' -o '".aab'
 
     publishing: 
       email:
