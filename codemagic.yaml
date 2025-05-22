@@ -21,9 +21,11 @@ workflows:
       - name: Build APK
         script: |
           ls ./
+          echo '---- 2 ----'
           ls ../
+          echo '----- e2 ----'
           ./gradlew assembleDebug -Dorg.gradle.jvmargs="--add-opens java.base/java.io=ALL-UNNAMED"
-          find build/ -type f
+          find ../build_outputs/ -type f
 
       - name: List output files (debugging)
         script: find build/ -type f
