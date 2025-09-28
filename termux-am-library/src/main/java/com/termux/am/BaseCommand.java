@@ -15,7 +15,7 @@
 ** limitations under the License.
 */
 
-package com.term.am;
+package com.linh.am;
 
 import java.io.PrintStream;
 
