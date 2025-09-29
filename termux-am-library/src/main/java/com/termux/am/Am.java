@@ -16,7 +16,7 @@
 */
 
 
-package com.term.am;
+package com.linh.am;
 
 import android.app.Activity;
 import android.app.Application;

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.term"
+    package="com.linh"
     android:installLocation="internalOnly"
-    android:sharedUserId="com.term"
+    android:sharedUserId="com.linh"
     android:sharedUserLabel="@string/shared_user_label">
 
     <uses-feature
@@ -14,7 +14,7 @@
         android:required="false" />
 
     <permission
-        android:name="com.term.permission.RUN_COMMAND"
+        android:name="com.linh.permission.RUN_COMMAND"
         android:description="@string/permission_run_command_description"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/permission_run_command_label"
@@ -115,7 +115,7 @@
             android:exported="false"
             android:noHistory="true"
             android:resizeableActivity="true"
-            android:taskAffinity="com.term.filereceiver"
+            android:taskAffinity="com.linh.filereceiver"
             tools:targetApi="n">
         </activity>
 
@@ -161,7 +161,7 @@
 
         <provider
             android:name=".filepicker.TermuxDocumentsProvider"
-            android:authorities="com.term.documents"
+            android:authorities="com.linh.documents"
             android:exported="true"
             android:grantUriPermissions="true"
             android:permission="android.permission.MANAGE_DOCUMENTS">
@@ -172,10 +172,10 @@
 
         <provider
             android:name=".app.TermuxOpenReceiver$ContentProvider"
-            android:authorities="com.term.files"
+            android:authorities="com.linh.files"
             android:exported="true"
             android:grantUriPermissions="true"
-            android:permission="com.term.permission.RUN_COMMAND" />
+            android:permission="com.linh.permission.RUN_COMMAND" />
 
 
         <receiver
@@ -202,9 +202,9 @@
         <service
             android:name=".app.RunCommandService"
             android:exported="true"
-            android:permission="com.term.permission.RUN_COMMAND">
+            android:permission="com.linh.permission.RUN_COMMAND">
             <intent-filter>
-                <action android:name="com.term.RUN_COMMAND" />
+                <action android:name="com.linh.RUN_COMMAND" />
             </intent-filter>
         </service>
 

@@ -1,4 +1,4 @@
-package com.term.am;
+package com.linh.am;
 
 import android.content.ComponentName;
 import android.content.Intent;
